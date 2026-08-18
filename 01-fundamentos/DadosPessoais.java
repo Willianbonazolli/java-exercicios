@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class DadosPessoais {
     public static void main(String[] args) {
+        System.out.println("Dados Pessoais");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o nome: ");

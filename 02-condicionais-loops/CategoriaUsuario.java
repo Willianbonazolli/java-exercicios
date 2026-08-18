@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class CategoriaUsuario {
     public static void main(String[] args) {
+        System.out.println("Categoria do Usuário");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite a idade: ");

@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class CalculadoraDeConsumo {
     public static void main(String[] args) {
+        System.out.println("Calculadora de Consumo");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite a distância percorrida em km: ");

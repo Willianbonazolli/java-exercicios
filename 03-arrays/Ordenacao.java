@@ -2,6 +2,8 @@ import java.util.Arrays;
 
 public class Ordenacao {
     public static void main(String[] args) {
+        System.out.println("Ordenação de Array");
+
         int[] numeros = {9, 3, 7, 1, 5};
 
         Arrays.sort(numeros);

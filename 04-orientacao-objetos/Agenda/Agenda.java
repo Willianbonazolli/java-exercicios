@@ -1,9 +1,15 @@
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Agenda {
-    private List<String> contatos = new ArrayList<>();
+
+    private ArrayList<String> contatos;
+
+    public Agenda() {
+        contatos = new ArrayList<>();
+        contatos.add("Ana");
+        contatos.add("Bruno");
+    }
 
     public void adicionarContato(String nome) {
         contatos.add(nome);
@@ -22,14 +28,52 @@ public class Agenda {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Agenda agenda = new Agenda();
+        int opcao = -1;
 
-        agenda.adicionarContato("Ana");
-        agenda.adicionarContato("Bruno");
-        agenda.listarContatos();
+        do {
+            System.out.println("\n===== Agenda de Contatos =====");
+            System.out.println("1 - Adicionar contato");
+            System.out.println("2 - Listar contatos");
+            System.out.println("3 - Buscar contato");
+            System.out.println("4 - Sair");
+            System.out.print("Escolha uma opção: ");
 
-        System.out.print("Digite o nome para buscar: ");
-        String nome = scanner.nextLine();
-        System.out.println(agenda.buscarContato(nome) ? "Contato encontrado" : "Contato não encontrado");
+            String entrada = scanner.nextLine().trim();
+            try {
+                opcao = Integer.parseInt(entrada);
+            } catch (NumberFormatException e) {
+                System.out.println("Digite um número válido!");
+                continue;
+            }
+
+            switch (opcao) {
+                case 1:
+                    System.out.print("Digite o nome do contato: ");
+                    String novoNome = scanner.nextLine().trim();
+                    agenda.adicionarContato(novoNome);
+                    System.out.println("Contato adicionado!");
+                    break;
+
+                case 2:
+                    System.out.println("--- Contatos ---");
+                    agenda.listarContatos();
+                    break;
+
+                case 3:
+                    System.out.print("Digite o nome para buscar: ");
+                    String nomeBusca = scanner.nextLine().trim();
+                    System.out.println(agenda.buscarContato(nomeBusca) ? "Contato encontrado" : "Contato não encontrado");
+                    break;
+
+                case 4:
+                    System.out.println("Saindo...");
+                    break;
+
+                default:
+                    System.out.println("Opção inválida!");
+            }
+
+        } while (opcao != 0);
 
         scanner.close();
     }

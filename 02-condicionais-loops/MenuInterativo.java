@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class MenuInterativo {
     public static void main(String[] args) {
+        System.out.println("Menu Interativo");
+
         Scanner scanner = new Scanner(System.in);
         int opcao;
 

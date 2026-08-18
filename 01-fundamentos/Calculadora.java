@@ -4,6 +4,8 @@ public class Calculadora {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Calculadora");
+
         System.out.print("Digite o primeiro número: ");
         double n1 = scanner.nextDouble();
 

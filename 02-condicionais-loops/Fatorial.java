@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Fatorial {
     public static void main(String[] args) {
+        System.out.println("Fatorial de um Número");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite um número: ");

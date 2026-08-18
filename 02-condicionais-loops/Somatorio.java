@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Somatorio {
     public static void main(String[] args) {
+        System.out.println("Somatório de 10 Números");
+
         Scanner scanner = new Scanner(System.in);
         int soma = 0;
 

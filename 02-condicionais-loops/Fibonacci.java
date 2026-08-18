@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Fibonacci {
     public static void main(String[] args) {
+        System.out.println("Sequência de Fibonacci");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite a quantidade de termos: ");

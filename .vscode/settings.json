@@ -1,14 +1,16 @@
 {
   "java.project.sourcePaths": [
-    "01-fundamentos",
-    "02-condicionais-loops",
-    "03-arrays",
-    "04-orientacao-objetos/ContaBancaria",
-    "04-orientacao-objetos/SistemaAlunos",
-    "04-orientacao-objetos/SistemaProdutos",
+    "05-projetos/ReservaDeQuadra",
     "05-projetos/JogoDaVelha",
     "05-projetos/Biblioteca",
-    "05-projetos/ReservaDeQuadra"
+    "04-orientacao-objetos/SistemaProdutos",
+    "04-orientacao-objetos/SistemaAlunos",
+    "04-orientacao-objetos/ContaBancaria",
+    "04-orientacao-objetos/Agenda",
+    "03-arrays",
+    "02-condicionais-loops",
+    "01-fundamentos",
+    "04-orientacao-objetos/CadastroClientes"
   ],
   "java.configuration.updateBuildConfiguration": "automatic"
 }

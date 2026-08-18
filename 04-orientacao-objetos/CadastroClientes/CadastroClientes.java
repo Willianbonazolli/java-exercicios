@@ -31,6 +31,7 @@ public class CadastroClientes {
         int opcao;
 
         do {
+            System.out.println("\n=== CADASTRO DE CLIENTES ===");
             System.out.println("\n1. Cadastrar cliente");
             System.out.println("2. Listar clientes");
             System.out.println("3. Pesquisar por nome");

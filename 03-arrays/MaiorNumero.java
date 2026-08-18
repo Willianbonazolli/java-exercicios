@@ -1,5 +1,7 @@
 public class MaiorNumero {
     public static void main(String[] args) {
+        System.out.println("Maior Número");
+
         int[] numeros = {12, 45, 7, 89, 23, 54};
 
         int maior = numeros[0];

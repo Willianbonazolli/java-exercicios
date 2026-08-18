@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class ClassificacaoNota {
     public static void main(String[] args) {
+        System.out.println("Classificação da Nota");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite a nota: ");

@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class MediaNotas {
     public static void main(String[] args) {
+        System.out.println("Média de 3 notas");
+
         Scanner scanner = new Scanner(System.in);
 
         double soma = 0;

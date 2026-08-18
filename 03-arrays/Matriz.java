@@ -1,5 +1,7 @@
 public class Matriz {
     public static void main(String[] args) {
+        System.out.println("Melhor Aluno");
+
         String[] nomes = {"Ana", "Bruno", "Carla", "Diego", "Elena"};
 
         double[][] notas = {

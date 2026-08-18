@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class VolumeLata {
     public static void main(String[] args) {
+        System.out.println("Calculadora de Volume de uma Lata");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o raio da lata: ");

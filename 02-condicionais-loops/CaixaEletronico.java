@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class CaixaEletronico {
     public static void main(String[] args) {
+        System.out.println("Caixa Eletrônico");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o valor do saque: ");

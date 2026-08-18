@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class ContagemRegressiva {
     public static void main(String[] args) {
+        System.out.println("Contagem Regressiva");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite um número inicial: ");

@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class BuscaArray {
     public static void main(String[] args) {
+        System.out.println("Busca em Array");
+
         Scanner scanner = new Scanner(System.in);
         int[] numeros = {5, 9, 12, 18, 25, 30};
 

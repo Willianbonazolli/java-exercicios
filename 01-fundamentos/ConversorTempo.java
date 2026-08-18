@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class ConversorTempo {
     public static void main(String[] args) {
+        System.out.println("Conversor de Tempo");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite a quantidade de segundos: ");

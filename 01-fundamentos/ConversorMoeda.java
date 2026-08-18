@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class ConversorMoeda {
     public static void main(String[] args) {
+        System.out.println("Conversor de Moeda");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o valor em reais: ");

@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Maioridade {
     public static void main(String[] args) {
+        System.out.println("Maioridade");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite sua idade: ");

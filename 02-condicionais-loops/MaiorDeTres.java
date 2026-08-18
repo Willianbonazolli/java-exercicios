@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class MaiorDeTres {
     public static void main(String[] args) {
+        System.out.println("Maior de Três Números");
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Digite o primeiro número: ");

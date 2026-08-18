@@ -1,5 +1,7 @@
 public class Temperaturas {
     public static void main(String[] args) {
+        System.out.println("Maior, Menor e Média de Temperaturas");
+
         double[] temperaturas = {22.5, 24.0, 23.7, 26.1, 25.9, 27.2, 24.8};
 
         double maior = temperaturas[0];
