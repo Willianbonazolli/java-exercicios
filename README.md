@@ -31,6 +31,6 @@ Fiz este Repo para documentar minha evolução e meus estudos de Java. <a href="
    java NomeDaClasse
 ```
 
-Caso queira entre em contato: <a href="https://www.linkedin.com/in/willian-bonazzoli">LINKDISNEY</a>
+Caso queira entre em contato para eu corrigir algum conteúdo ou atividade: <a href="https://www.linkedin.com/in/willian-bonazzoli">LINKDISNEY</a>
 
  
