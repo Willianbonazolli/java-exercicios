@@ -1,16 +1,33 @@
 public class Matriz {
     public static void main(String[] args) {
-        int[][] matriz = {
-            {1, 2, 3},
-            {4, 5, 6},
-            {7, 8, 9}
+        String[] nomes = {"Ana", "Bruno", "Carla", "Diego", "Elena"};
+
+        double[][] notas = {
+            {8.0, 7.5, 9.0},
+            {6.0, 5.5, 7.0},
+            {9.5, 8.0, 9.0},
+            {4.0, 6.5, 5.0},
+            {7.0, 8.5, 8.0}
         };
 
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                System.out.print(matriz[i][j] + " ");
+        double maiorMedia = -1;
+        String melhorAluno = "";
+
+        for (int i = 0; i < notas.length; i++) {
+            double soma = 0;
+            for (int j = 0; j < notas[i].length; j++) {
+                soma += notas[i][j];
             }
-            System.out.println();
+            double media = soma / notas[i].length;
+            System.out.printf("%-8s → média: %.2f%n", nomes[i], media);
+
+            if (media > maiorMedia) {
+                maiorMedia = media;
+                melhorAluno = nomes[i];
+            }
         }
+
+        System.out.println("\nMelhor aluno: " + melhorAluno +
+                           String.format(" (%.2f)", maiorMedia));
     }
 }

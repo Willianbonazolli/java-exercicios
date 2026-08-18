@@ -1,0 +1,1661 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java: Caderno Prático de Exercícios</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <h1>Java</h1>
+
+    <div class="callout">
+      <strong>IMPORTANTE!</strong>
+
+      <p>
+        Olá! Seja bem-vindo ao meu guia de estudos de Java. Aqui você encontrará
+        conteúdos, exemplos e exercícios práticos.
+      </p>
+
+      <p>
+        Vale ressaltar que este material foi criado a partir dos meus
+        estudos e experiências com a linguagem. Não possuo formação na área de
+        ensino, portanto, algumas explicações podem conter erros, apresentar
+        limitações ou utilizar abordagens de que não sejam as melhores.
+      </p>
+
+      <p>
+        Criei este "guia" para auxiliar meus estudos, revisar os
+        conteúdos aprendidos e acompanhar minha evolução durante o aprendizado
+        de Java. Ao mesmo tempo, espero que ele também possa ser útil para
+        outras pessoas que estejam começando ou aprimorando seus conhecimentos
+        na linguagem.
+      </p>
+
+      <p>
+        Caso você encontre algum erro, tenha alguma sugestão ou queira
+        contribuir com uma melhoria, fique à vontade para entrar em contato.
+        Toda contribuição é bem-vinda e pode ajudar a tornar este material
+        melhor.
+      </p>
+
+      <p>
+        No fim, o mais importante é continuar aprendendo, praticando e
+        evoluindo.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>1. Conceitos Básicos</h2>
+
+      <p>
+        Java é uma linguagem amplamente utilizada no desenvolvimento de
+        aplicações. Sua estrutura permite trabalhar desde pequenos programas
+        executados no terminal até sistemas web, aplicações empresariais e
+        soluções distribuídas.
+      </p>
+
+      <p>
+        Um programa Java é organizado a partir de <strong>classes</strong>, que
+        podem conter atributos e métodos. Conforme o projeto cresce, essas
+        classes podem ser agrupadas em <strong>pacotes</strong>, ajudando a
+        separar responsabilidades e manter o código organizado.
+      </p>
+
+      <p>
+        Aprender Java não envolve apenas conhecer a sintaxe. É importante
+        desenvolver a capacidade de transformar um problema em etapas que possam
+        ser representadas por algoritmos e, posteriormente, implementadas em
+        código.
+      </p>
+
+      <h3>Variáveis</h3>
+
+      <p>
+        Uma <strong>variável</strong> representa um espaço utilizado pelo
+        programa para armazenar uma informação. Java utiliza tipagem estática: o
+        tipo do dado é declarado junto com a variável.
+      </p>
+
+      <p>Entre os tipos mais utilizados estão:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Utilização</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><code>byte</code></td>
+            <td>Pequenos números inteiros</td>
+          </tr>
+
+          <tr>
+            <td><code>short</code></td>
+            <td>Números inteiros de menor capacidade</td>
+          </tr>
+
+          <tr>
+            <td><code>int</code></td>
+            <td>Inteiros utilizados na maioria dos programas</td>
+          </tr>
+
+          <tr>
+            <td><code>long</code></td>
+            <td>Inteiros que podem atingir valores muito grandes</td>
+          </tr>
+
+          <tr>
+            <td><code>float</code></td>
+            <td>Valores decimais</td>
+          </tr>
+
+          <tr>
+            <td><code>double</code></td>
+            <td>Valores decimais com maior precisão</td>
+          </tr>
+
+          <tr>
+            <td><code>char</code></td>
+            <td>Um único caractere</td>
+          </tr>
+
+          <tr>
+            <td><code>boolean</code></td>
+            <td>Valores <code>true</code> ou <code>false</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Exemplos de declaração:</p>
+
+      <pre><code class="language-java">int quantidade = 15;
+long populacao = 214000000L;
+double salario = 2850.75;
+char inicial = 'W';
+boolean ativo = true;</code></pre>
+
+      <h3>Operadores Aritméticos</h3>
+
+      <p>
+        Java fornece os operadores aritméticos comuns. O operador
+        <code>%</code>, chamado módulo, retorna o resto da divisão inteira e é
+        bastante utilizado para verificar paridade e calcular divisores.
+      </p>
+
+      <pre><code class="language-java">int a = 10, b = 3;
+System.out.println(a + b);  // 13
+System.out.println(a - b);  // 7
+System.out.println(a * b);  // 30
+System.out.println(a / b);  // 3, divisão inteira
+System.out.println(a % b);  // 1, resto</code></pre>
+
+      <p>
+        Para cálculos matemáticos mais complexos, a classe <code>Math</code>
+        fornece constantes e métodos prontos.
+      </p>
+
+      <pre><code class="language-java">double area = Math.PI * Math.pow(raio, 2); // π × r²
+double raiz = Math.sqrt(25);               // 5.0</code></pre>
+
+      <p>
+        Além dos tipos primitivos, é possível trabalhar com objetos como
+        <code>String</code>.
+      </p>
+
+      <pre><code class="language-java">String cidade = "Cuiabá";</code></pre>
+
+      <h3>Operações com Strings</h3>
+
+      <p>
+        Strings possuem métodos que permitem consultar e manipular seu conteúdo.
+        Veja alguns dos métodos mais utilizados:
+      </p>
+
+      <h4><code>length()</code></h4>
+
+      <p>Retorna a quantidade de caracteres da String.</p>
+
+      <pre><code class="language-java">String curso = "Engenharia de Software";
+System.out.println(curso.length()); // Resultado: 23</code></pre>
+      <br />
+
+      <h4><code>toUpperCase()</code> e <code>toLowerCase()</code></h4>
+
+      <p>Alteram as letras da String para maiúsculas ou minúsculas.</p>
+
+      <pre><code class="language-java">String curso = "Engenharia de Software";
+
+System.out.println(curso.toUpperCase()); // Resultado: ENGENHARIA DE SOFTWARE
+
+System.out.println(curso.toLowerCase()); // Resultado: engenharia de software</code></pre>
+      <br />
+
+      <h4><code>contains()</code></h4>
+
+      <p>
+        Verifica se a String contém determinada sequência de caracteres. O
+        resultado é um valor <code>boolean</code>: <code>true</code> ou
+        <code>false</code>.
+      </p>
+
+      <pre><code class="language-java">String curso = "Engenharia de Software";
+
+System.out.println(curso.contains("Software")); // Resultado: true
+
+System.out.println(curso.contains("Java")); // Resultado: false</code></pre>
+      <br />
+
+      <h4><code>replace()</code></h4>
+
+      <p>Substitui uma sequência de caracteres por outra.</p>
+
+      <pre><code class="language-java">String linguagem = "Eu estudo Java";
+
+String resultado = linguagem.replace("Java", "Python");
+
+System.out.println(resultado); // Resultado: Eu estudo Python</code></pre>
+      <br />
+
+      <h4><code>substring()</code></h4>
+
+      <p>
+        Obtém uma parte da String a partir de uma posição inicial. Também é
+        possível informar uma posição final.
+      </p>
+
+      <pre><code class="language-java">String curso = "Engenharia de Software";
+
+System.out.println(curso.substring(0, 11)); // Resultado: Engenharia
+
+System.out.println(curso.substring(12)); // Resultado: de Software</code></pre>
+
+      <div class="callout">
+        <strong>Resumo dos métodos</strong>
+
+        <ul>
+          <li><code>length()</code>: retorna a quantidade de caracteres;</li>
+          <li><code>toUpperCase()</code>: converte para letras maiúsculas;</li>
+          <li><code>toLowerCase()</code>: converte para letras minúsculas;</li>
+          <li><code>contains()</code>: verifica se um trecho está presente;</li>
+          <li>
+            <code>replace()</code>: substitui uma sequência de caracteres;
+          </li>
+          <li><code>substring()</code>: obtém uma parte da String.</li>
+        </ul>
+      </div>
+
+      <h3>Comentários</h3>
+
+      <p>
+        Comentários não fazem parte da execução e servem para documentar o
+        código.
+      </p>
+
+      <pre>
+// Comentário de linha única
+
+/*
+   Comentário de
+   múltiplas linhas.
+*/</pre
+      >
+
+      <div class="callout">
+        <strong>Como ler dados do teclado em Java?</strong>
+
+        <p>
+          Para capturar entradas do usuário no terminal, utilizamos a classe
+          <code>Scanner</code> do pacote <code>java.util</code>.
+        </p>
+
+        <pre><code class="language-java">import java.util.Scanner;
+
+public class Exemplo {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite seu nome: ");
+        String nome = sc.nextLine();
+
+        System.out.print("Digite sua idade: ");
+        int idade = sc.nextInt();
+
+        System.out.print("Digite seu salário: ");
+        double salario = sc.nextDouble();
+
+        System.out.println(
+            "Olá, " + nome + "! Idade: " + idade
+        );
+
+        sc.close();
+    }
+}</code></pre>
+
+        <p>
+          Use <code>nextLine()</code> para texto, <code>nextInt()</code> para
+          inteiros e <code>nextDouble()</code> para valores decimais. Ao
+          finalizar o uso do <code>Scanner</code>, feche-o com
+          <code>sc.close()</code>.
+        </p>
+      </div>
+
+      <h3>Exercícios</h3>
+      <p>
+        Ao longo desta página, você encontrará exercícios práticos relacionados
+        aos conceitos apresentados. Utilize eles como forma de fixar o conteúdo
+        e trabalhar um pouco a parte de lógica em java. <br />
+        Lembre-se quero que você chegue ao resultado que o enunciado pede da sua
+        forma, mas também é importante buscar melhorias no código, então ao
+        terminar um exercício se pergunte:
+        <strong>O que posso melhorar nele? </strong><br />
+        Caso você queira fazer uma comparação deixei a resolução deles no
+        repositório.
+      </p>
+
+      <h3>Exercícios: Fundamentos</h3>
+
+      <div class="exercise">
+        <strong>Exercício 1: Calculadora</strong>
+
+        <p>
+          Leia dois números e exiba os resultados da soma, subtração,
+          multiplicação e divisão entre eles.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Declare as duas variáveis como <code>double</code> para que a divisão
+          não seja inteira. Use <code>System.out.println</code> quatro vezes,
+          uma para cada operação.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 2: Calculadora de Consumo</strong>
+
+        <p>
+          Receba a distância percorrida e a quantidade de combustível utilizada.
+          Calcule e exiba o consumo médio em km/l.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          <code>consumo = distancia / combustivel</code>. Use
+          <code>double</code> para ambas as variáveis e leia os valores com
+          <code>sc.nextDouble()</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 3: Conversor de Moeda</strong>
+
+        <p>
+          Leia um valor em reais e a cotação informada pelo usuário. Exiba o
+          valor convertido para a moeda estrangeira.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          <code>valorConvertido = valorReais / cotacao</code>. Use
+          <code>double</code> e <code>sc.nextDouble()</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 4: Conversor de Temperatura</strong>
+
+        <p>
+          Leia uma temperatura em Celsius e converta para Fahrenheit usando a
+          fórmula <code>F = (C × 9/5) + 32</code>.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Declare a temperatura como <code>double</code>. Atenção: em Java,
+          <code>9 / 5</code> resulta em uma divisão inteira. Use
+          <code>9.0 / 5</code> ou <code>(celsius * 9.0 / 5) + 32</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 5: Área do Círculo</strong>
+
+        <p>
+          Solicite o raio de um círculo e calcule sua área com
+          <code>A = π × r²</code>. Apresente o resultado com duas casas
+          decimais.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Use <code>Math.PI</code> e <code>Math.pow(raio, 2)</code>. Para
+          formatar o resultado: <code>System.out.printf("%.2f%n", area)</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 6: Volume da Lata</strong>
+
+        <p>
+          Leia o raio e a altura de uma lata cilíndrica. Calcule o volume com
+          <code>V = π × r² × h</code>.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Combine <code>Math.PI</code>, <code>Math.pow(raio, 2)</code> e a
+          altura em uma única expressão.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 7: Conversor de Tempo</strong>
+
+        <p>
+          Receba uma quantidade de segundos e transforme em horas, minutos e
+          segundos.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          <code>horas = total / 3600</code>,
+          <code>minutos = (total % 3600) / 60</code> e
+          <code>segundos = total % 60</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 8: Dados Pessoais</strong>
+
+        <p>
+          Solicite nome, idade e cidade de uma pessoa e apresente uma frase com
+          todas as informações.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Use <code>sc.nextLine()</code> para nome e cidade e
+          <code>sc.nextInt()</code> para idade. Após <code>nextInt()</code>,
+          chame <code>sc.nextLine()</code>
+          para consumir a quebra de linha antes de ler o próximo texto.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>2. Condições e Repetições</h2>
+
+      <p>
+        Programas raramente executam sempre as mesmas instruções. O
+        <code>if</code> permite executar um trecho somente quando uma condição é
+        verdadeira.
+      </p>
+
+      <pre><code class="language-java">if (idade >= 18) {
+    System.out.println("Acesso permitido");
+} else {
+    System.out.println("Acesso negado");
+}</code></pre>
+
+      <p>Para múltiplas possibilidades, use <code>else if</code>.</p>
+
+      <pre><code class="language-java">if (nota >= 9) {
+    System.out.println("Excelente");
+} else if (nota >= 7) {
+    System.out.println("Bom");
+} else {
+    System.out.println("Precisa melhorar");
+}</code></pre>
+
+      <p>
+        O <code>switch</code> é útil quando comparamos uma variável com valores
+        fixos conhecidos.
+      </p>
+
+      <pre><code class="language-java">switch (opcao) {
+
+    case 1:
+        System.out.println("Cadastrar");
+        break;
+
+    case 2:
+        System.out.println("Consultar");
+        break;
+
+    default:
+        System.out.println("Opção inválida");
+}</code></pre>
+
+      <h3>Operadores Relacionais e Lógicos</h3>
+
+      <p>Operadores relacionais utilizados para comparar valores:</p>
+
+      <pre>
+==   igual
+!=   diferente
+&gt;    maior
+&lt;    menor
+&gt;=   maior ou igual
+&lt;=   menor ou igual</pre
+      >
+
+      <p>Operadores lógicos utilizados para combinar condições:</p>
+
+      <pre>
+&amp;&amp;   E, ambas verdadeiras
+||   OU, pelo menos uma verdadeira
+!    NÃO, inverte o resultado</pre
+      >
+
+      <h3>Estruturas de Repetição</h3>
+
+      <p>
+        O <code>for</code> é ideal quando a quantidade de repetições é
+        conhecida.
+      </p>
+
+      <pre><code class="language-java">for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}</code></pre>
+
+      <p>O <code>while</code> repete enquanto uma condição for verdadeira.</p>
+
+      <pre><code class="language-java">while (saldo > 0) {
+    saldo -= 100;
+}</code></pre>
+
+      <p>
+        O <code>do while</code> executa o bloco pelo menos uma vez antes de
+        verificar a condição.
+      </p>
+
+      <pre><code class="language-java">do {
+    System.out.println("Menu");
+} while (opcao != 0);</code></pre>
+
+      <p>
+        As palavras <code>break</code> e <code>continue</code> controlam o fluxo
+        dentro de loops.
+      </p>
+
+      <pre><code class="language-java">for (int i = 2; i <= numero; i++) {
+
+    if (numero % i == 0) {
+        primo = false;
+        break;
+    }
+}</code></pre>
+
+      <h3>Exercícios: Condições e Repetições</h3>
+
+      <div class="exercise">
+        <strong>Exercício 9: Maioridade</strong>
+
+        <p>
+          Leia a idade de uma pessoa e informe se ela é maior ou menor de idade.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Use <code>if (idade >= 18)</code> para verificar se a pessoa é maior
+          de idade.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 10: Par ou Ímpar</strong>
+
+        <p>Leia um número inteiro e informe se ele é par ou ímpar.</p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Use o operador módulo:
+          <code>if (numero % 2 == 0)</code>. Se o resultado for zero, o número é
+          par.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 11: Categoria de Usuário</strong>
+
+        <p>
+          Leia a idade e classifique como: Criança, Adolescente, Adulto ou
+          Idoso.
+        </p>
+
+        <ul>
+          <li>Criança: até 12 anos;</li>
+          <li>Adolescente: 13 a 17 anos;</li>
+          <li>Adulto: 18 a 59 anos;</li>
+          <li>Idoso: 60 anos ou mais.</li>
+        </ul>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Use <code>if / else if / else</code> com faixas de valores. Teste da
+          menor para a maior faixa para evitar sobreposição.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 12: Desconto de Cliente</strong>
+
+        <p>
+          Leia o valor de uma compra. Se for maior que R$100, aplique 10% de
+          desconto. Exiba o valor final.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          <code>if (valor > 100) valorFinal = valor * 0.90;</code>. Caso
+          contrário, <code>valorFinal = valor</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 13: Classificação de Nota</strong>
+
+        <p>
+          Receba uma nota de 0 a 10 e classifique como: Excelente, Bom, Regular
+          ou Insuficiente.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Use <code>if / else if / else</code> verificando os limiares do maior
+          para o menor.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 14: Maior de Três</strong>
+
+        <p>Leia três números e descubra qual possui o maior valor.</p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Guarde o primeiro valor como <code>maior</code>. Compare com cada um
+          dos outros: <code>if (b > maior) maior = b</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 15: Caixa Eletrônico</strong>
+
+        <p>
+          Receba um valor de saque, múltiplo de 10, e informe quantas notas de
+          R$100, R$50, R$20 e R$10 serão entregues.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Para cada cédula:
+          <code>notas = valor / cedula</code>. Depois:
+          <code>valor = valor % cedula</code>. Processe sempre da maior para a
+          menor.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 16: Contagem Regressiva</strong>
+
+        <p>
+          Solicite um número inteiro e exiba uma contagem regressiva até zero.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Use um <code>for</code> decrescente:
+          <code>for (int i = n; i >= 0; i--)</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 17: Tabuada</strong>
+
+        <p>Leia um número inteiro e exiba sua tabuada de 1 a 10.</p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Use um <code>for</code> de 1 a 10:
+          <code>System.out.println(n + " x " + i + " = " + (n * i))</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 18: Somatório</strong>
+
+        <p>Leia 10 números inteiros e exiba a soma total.</p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Declare <code>int soma = 0</code> antes do loop. Dentro do
+          <code>for</code>, acumule com <code>soma += sc.nextInt()</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 19: Soma dos Ímpares</strong>
+
+        <p>
+          Leia um número <code>N</code> e calcule a soma de todos os números
+          ímpares entre 1 e <code>N</code>.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Dentro do loop, verifique
+          <code>if (i % 2 != 0)</code> antes de acumular.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 20: Divisores</strong>
+
+        <p>Receba um número inteiro e mostre todos os seus divisores.</p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          <p>
+            Percorra de 1 até o número com <code>for</code> e teste o resto da
+            divisão.
+          </p>
+
+          <pre><code class="language-java">for (int i = 1; i <= numero; i++) {
+
+    if (numero % i == 0) {
+        System.out.println(i);
+    }
+}</code></pre>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 21: Número Perfeito</strong>
+
+        <p>
+          Verifique se um número é perfeito. Um número perfeito é igual à soma
+          de seus divisores positivos, excluindo ele mesmo.
+        </p>
+
+        <p>Exemplo: <code>6 = 1 + 2 + 3</code>.</p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Some os divisores de 1 até <code>n - 1</code> que satisfazem
+          <code>n % i == 0</code>. Compare a soma com <code>n</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 22: Fatorial</strong>
+
+        <p>Leia um número inteiro não negativo e calcule seu fatorial.</p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Inicialize <code>int fatorial = 1</code>. No loop
+          <code>for (int i = 2; i <= n; i++)</code>, multiplique usando
+          <code>fatorial *= i</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 23: Número Primo</strong>
+
+        <p>
+          Leia um número e informe se ele é primo. Um número primo é divisível
+          apenas por 1 e por ele mesmo.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Percorra de 2 até <code>Math.sqrt(numero)</code>. Se encontrar um
+          divisor, use <code>break</code> e marque como não primo. Números
+          menores ou iguais a 1 não são primos.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 24: Fibonacci</strong>
+
+        <p>
+          Leia a quantidade de termos e exiba a sequência de Fibonacci: 0, 1, 1,
+          2, 3, 5, 8...
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Mantenha dois inteiros <code>a = 0</code> e <code>b = 1</code>. A cada
+          iteração, imprima <code>a</code>, calcule
+          <code>proximo = a + b</code>, depois atualize <code>a = b</code> e
+          <code>b = proximo</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 25: Menu Interativo</strong>
+
+        <p>
+          Crie um menu com as opções abaixo que se repita até o usuário escolher
+          sair.
+        </p>
+
+        <ol>
+          <li>Exibir uma mensagem;</li>
+          <li>Mostrar a data informada;</li>
+          <li>Realizar uma soma;</li>
+          <li>Encerrar o programa.</li>
+        </ol>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Use <code>do { ... } while (opcao != 4)</code> com um
+          <code>switch</code> interno. Leia a opção com
+          <code>sc.nextInt()</code> a cada iteração.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>3. Vetores e Matrizes</h2>
+
+      <p>
+        Quando precisamos trabalhar com vários valores relacionados, arrays
+        permitem armazenar múltiplos elementos do mesmo tipo em uma única
+        estrutura.
+      </p>
+
+      <pre><code class="language-java">double[] temperaturas = {
+    24.5,
+    25.8,
+    26.1,
+    23.9
+};</code></pre>
+
+      <p>
+        O primeiro elemento está na posição <code>0</code>. Para criar um array
+        de tamanho fixo:
+      </p>
+
+      <pre><code class="language-java">int[] valores = new int[5];
+// cinco posições, todas inicialmente com 0</code></pre>
+
+      <h3>Percorrendo um Vetor</h3>
+
+      <pre><code class="language-java">// For com índice: útil quando o índice importa
+for (int i = 0; i < valores.length; i++) {
+    System.out.println(valores[i]);
+}
+
+// For-each: útil quando apenas o valor é necessário
+for (int valor : valores) {
+    System.out.println(valor);
+}</code></pre>
+
+      <h3>Matrizes</h3>
+
+      <p>Uma matriz organiza informações em linhas e colunas.</p>
+
+      <pre><code class="language-java">int[][] tabela = {
+    {10, 20, 30},
+    {40, 50, 60}
+};
+
+for (int linha = 0; linha < tabela.length; linha++) {
+
+    for (int coluna = 0;
+         coluna < tabela[linha].length;
+         coluna++) {
+
+        System.out.print(tabela[linha][coluna] + " ");
+    }
+
+    System.out.println();
+}</code></pre>
+
+      <h3>Exercícios: Arrays e Matrizes</h3>
+
+      <div class="exercise">
+        <strong>Exercício 26: Maior Número</strong>
+
+        <p>Dado um array fixo de inteiros, encontre e exiba o maior valor.</p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Inicialize <code>maior = numeros[0]</code>. Percorra a partir do
+          índice 1 comparando:
+          <code>if (numeros[i] > maior) maior = numeros[i]</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 27: Média do Array</strong>
+
+        <p>Dado um array fixo de inteiros, calcule e exiba a média.</p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Some todos os valores com <code>for-each</code>. Divida por
+          <code>numeros.length</code> usando <code>double</code> para evitar
+          divisão inteira: <code>soma / (double) numeros.length</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 28: Temperaturas</strong>
+
+        <p>
+          Armazene as temperaturas de sete dias e informe a maior, a menor e a
+          média.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Inicialize <code>maior</code> e <code>menor</code> com
+          <code>temps[0]</code>. Percorra comparando cada elemento e acumulando
+          a soma para calcular a média.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 29: Contagem de Valores</strong>
+
+        <p>
+          Dado um array de inteiros, informe quantos são positivos, negativos e
+          iguais a zero.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Declare três contadores. Use <code>for-each</code> com
+          <code>if / else if / else</code> para incrementar o contador correto.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 30: Inversão de Vetor</strong>
+
+        <p>
+          Leia dez números e exiba-os na ordem inversa à que foram digitados.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Leia normalmente, utilizando os índices de 0 a 9. Para exibir
+          invertido:
+          <code>for (int i = nums.length - 1; i >= 0; i--)</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 31: Busca no Array</strong>
+
+        <p>
+          Dado um array fixo de inteiros, solicite um valor ao usuário e informe
+          se ele está presente.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Percorra com <code>for-each</code> comparando cada elemento. Use
+          <code>boolean encontrado = false</code> e altere para
+          <code>true</code> quando encontrar o valor. Você também pode encerrar
+          a busca com <code>break</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 32: Pesquisa de Nome</strong>
+
+        <p>
+          Crie um array com nomes de pessoas. Solicite um nome e informe se está
+          cadastrado.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Compare Strings com <code>.equals()</code>, nunca com <code>==</code>:
+          <code>if (nomes[i].equals(busca))</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 33: Matriz de Notas</strong>
+
+        <p>
+          Crie uma matriz com as notas de cinco alunos em três avaliações.
+          Calcule a média de cada aluno e informe quem obteve a maior média.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          O loop externo percorre os alunos e o loop interno percorre as
+          avaliações. Some as notas de cada linha e divida por 3. Guarde a maior
+          média e o índice do aluno.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>4. Coleções: ArrayList</h2>
+
+      <p>
+        Arrays possuem tamanho fixo. Uma vez criados, não é possível adicionar
+        ou remover posições. Para listas dinâmicas, Java oferece o
+        <code>ArrayList</code>, que pode crescer e diminuir conforme necessário.
+      </p>
+
+      <p>
+        Para usar um <code>ArrayList</code>, importe a classe e declare o tipo
+        dos elementos entre <code>&lt;&gt;</code>.
+      </p>
+
+      <pre><code class="language-java">import java.util.ArrayList;
+
+ArrayList&lt;String&gt; nomes = new ArrayList&lt;&gt;();</code></pre>
+
+      <h3>Operações Básicas</h3>
+
+      <pre><code class="language-java">nomes.add("Ana");
+nomes.add("Bruno");
+nomes.add("Carla");
+
+System.out.println(nomes.get(0));
+System.out.println(nomes.size());
+System.out.println(nomes.contains("Ana"));
+
+nomes.remove(1);
+nomes.remove("Carla");</code></pre>
+
+      <h3>Percorrendo um ArrayList</h3>
+
+      <p>O <code>for-each</code> funciona da mesma forma que com arrays.</p>
+
+      <pre><code class="language-java">for (String nome : nomes) {
+    System.out.println(nome);
+}</code></pre>
+
+      <h3>ArrayList com Objetos</h3>
+
+      <p>
+        Podemos armazenar qualquer tipo de objeto, inclusive classes que
+        criamos.
+      </p>
+
+      <pre><code class="language-java">import java.util.ArrayList;
+
+ArrayList&lt;Produto&gt; estoque = new ArrayList&lt;&gt;();
+
+estoque.add(
+    new Produto("Teclado", 150.00)
+);
+
+estoque.add(
+    new Produto("Mouse", 80.00)
+);
+
+for (Produto p : estoque) {
+    p.exibirInformacoes();
+}</code></pre>
+
+      <div class="callout">
+        <strong>Array ou ArrayList?</strong>
+
+        <p>
+          Use <strong>array</strong> quando o número de elementos é fixo e
+          conhecido, como sete dias da semana ou uma matriz 3×3.
+        </p>
+
+        <p>
+          Use <strong>ArrayList</strong> quando a lista precisa crescer ou
+          diminuir durante a execução do programa. Essa situação é comum em
+          cadastros, menus e sistemas.
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>5. Programação Orientada a Objetos</h2>
+
+      <p>
+        A programação orientada a objetos, conhecida como POO, permite
+        estruturar uma aplicação utilizando entidades com
+        <strong>dados e comportamentos</strong>.
+      </p>
+
+      <p>
+        Uma <strong>classe</strong> funciona como um modelo. Um
+        <strong>objeto</strong> é uma instância desse modelo.
+      </p>
+
+      <pre><code class="language-java">Funcionario f = new Funcionario();</code></pre>
+
+      <h3>Atributos</h3>
+
+      <p>Atributos representam as características de um objeto.</p>
+
+      <pre><code class="language-java">class Produto {
+
+    String nome;
+    double preco;
+    int quantidade;
+}</code></pre>
+
+      <div class="callout">
+        <strong>Atenção: modificadores de acesso</strong>
+
+        <p>
+          Atributos sem modificador utilizam acesso de pacote
+          (<em>package-private</em>), permitindo acesso por classes do mesmo
+          pacote.
+        </p>
+
+        <p>
+          Na prática, é recomendado declarar atributos como
+          <code>private</code> e fornecer métodos de acesso, como
+          <em>getters</em> e <em>setters</em>.
+        </p>
+      </div>
+
+      <h3>Métodos</h3>
+
+      <p>
+        Métodos representam ações que o objeto pode executar. Um método pode
+        retornar um valor ou não.
+      </p>
+
+      <pre><code class="language-java">// Método sem retorno
+void exibirNome() {
+    System.out.println(nome);
+}
+
+// Método com retorno
+double calcularSalarioAnual() {
+    return salario * 12;
+}
+
+boolean estaAtivo() {
+    return ativo;
+}</code></pre>
+
+      <p>
+        O tipo de retorno pode ser qualquer tipo primitivo, como
+        <code>int</code>, <code>double</code> e <code>boolean</code>, ou
+        qualquer classe, como <code>String</code> e <code>Produto</code>.
+      </p>
+
+      <p>
+        Use <code>void</code> quando o método não precisa devolver um valor.
+      </p>
+
+      <h3>Construtores</h3>
+
+      <p>O construtor inicializa o objeto no momento da criação.</p>
+
+      <pre><code class="language-java">public Produto(String nome, double preco) {
+
+    this.nome = nome;
+    this.preco = preco;
+}
+
+// Uso
+Produto teclado = new Produto("Teclado", 150.00);</code></pre>
+
+      <h3>Encapsulamento</h3>
+
+      <p>
+        Proteja os atributos com <code>private</code> e exponha apenas o que for
+        necessário por meio de métodos.
+      </p>
+
+      <pre><code class="language-java">class Conta {
+
+    private double saldo;
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void depositar(double valor) {
+
+        if (valor > 0) {
+            saldo += valor;
+        }
+    }
+}</code></pre>
+
+      <h3>Exercícios: Orientação a Objetos</h3>
+
+      <div class="exercise">
+        <strong>Exercício 34: Aluno</strong>
+
+        <p>
+          Crie uma classe <code>Aluno</code> com nome e três notas. Implemente
+          <code>calcularMedia()</code>, que retorna a média, e
+          <code>verificarSituacao()</code>, que retorna "Aprovado",
+          "Recuperação" ou "Reprovado".
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          <code>calcularMedia()</code> deve ter tipo de retorno
+          <code>double</code>. <code>verificarSituacao()</code> deve retornar
+          <code>String</code>. Use <code>if / else if</code> com os limiares 7.0
+          e 5.0.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 35: Funcionário</strong>
+
+        <p>
+          Crie uma classe <code>Funcionario</code> com nome, cargo e salário.
+          Implemente <code>aumentarSalario(double percentual)</code> e
+          <code>exibirDados()</code>.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Declare os atributos como <code>private</code>. O aumento pode ser
+          calculado com <code>this.salario *= (1 + percentual / 100)</code>.
+          Valide que o percentual seja positivo antes de aplicar.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 36: Conta Bancária</strong>
+
+        <p>
+          Crie uma classe <code>ContaBancaria</code> com titular, número e
+          saldo. Implemente <code>depositar</code>, <code>sacar</code> e
+          <code>consultarSaldo</code>.
+        </p>
+
+        <p>
+          O método <code>sacar</code> deve retornar
+          <code>boolean</code> indicando se a operação foi realizada.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          <code>sacar</code> deve verificar
+          <code>valor > 0 && valor <= saldo</code>
+          antes de debitar. Retorne <code>true</code> em caso de sucesso e
+          <code>false</code> caso contrário.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 37: Carro</strong>
+
+        <p>
+          Crie uma classe <code>Carro</code> com marca, modelo, ano e
+          quilometragem. Implemente <code>acelerar(double velocidade)</code> e
+          <code>exibirDetalhes()</code>.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Todos os atributos devem ser <code>private</code> e recebidos pelo
+          construtor. O método <code>acelerar</code> pode apenas imprimir a nova
+          velocidade.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 38: Veículo</strong>
+
+        <p>
+          Crie uma classe <code>Veiculo</code> com modelo, marca, ano e
+          velocidade atual. Implemente <code>acelerar</code>,
+          <code>frear</code> e <code>exibirDados</code>.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Para garantir que a velocidade não fique negativa:
+          <code>
+            this.velocidade = Math.max(0, this.velocidade - decremento) </code
+          >.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 39: Filme</strong>
+
+        <p>
+          Crie uma classe <code>Filme</code> com título, gênero, duração e nota.
+          Implemente <code>avaliacaoBoa()</code>, que retorna
+          <code>true</code> se a nota for maior ou igual a 7.0.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          O tipo de retorno de <code>avaliacaoBoa()</code> é
+          <code>boolean</code>: <code>return this.nota >= 7.0</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 40: Agenda de Contatos</strong>
+
+        <p>
+          Crie uma classe <code>Agenda</code> com uma lista interna de contatos
+          utilizando <code>ArrayList&lt;String&gt;</code>.
+        </p>
+
+        <p>
+          Implemente os métodos
+          <code>adicionarContato</code>, <code>listarContatos</code> e
+          <code>buscarContato(String nome)</code>.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          O <code>ArrayList</code> deve ser um atributo <code>private</code> da
+          classe. O método <code>buscarContato</code> pode usar
+          <code>contatos.contains(nome)</code>.
+        </div>
+      </div>
+
+      <div class="exercise">
+        <strong>Exercício 41: Cadastro de Clientes</strong>
+
+        <p>Crie uma classe <code>Cliente</code> com nome, telefone e e-mail.</p>
+
+        <p>
+          Depois, desenvolva um programa com menu que permita cadastrar, listar
+          e pesquisar clientes pelo nome utilizando um
+          <code>ArrayList&lt;Cliente&gt;</code>.
+        </p>
+
+        <button class="hint-btn">▼ Ver Dica</button>
+
+        <div class="hint-content">
+          Use <code>equalsIgnoreCase()</code> para comparar nomes durante a
+          busca. O menu pode utilizar <code>do/while</code> com
+          <code>switch</code>.
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>6. Projetos Práticos</h2>
+
+      <p>
+        Nesta etapa, você colocará em prática os conhecimentos estudados ao
+        longo da apostila por meio de projetos maiores. Cada projeto apresenta
+        uma situação diferente e possui funcionalidades que devem ser
+        implementadas.
+      </p>
+
+      <p>
+        O objetivo não é apenas fazer o programa funcionar, mas também organizar
+        o código de forma clara, separar responsabilidades e criar soluções que
+        possam ser melhoradas conforme o projeto evolui.
+      </p>
+
+      <h3>Projeto 1: Lista de Tarefas</h3>
+
+      <p>
+        Desenvolva uma aplicação para organizar tarefas do dia a dia. O usuário
+        deverá conseguir cadastrar tarefas e acompanhar quais atividades ainda
+        precisam ser realizadas.
+      </p>
+
+      <p><strong>O programa deverá permitir:</strong></p>
+
+      <ul>
+        <li>Adicionar uma nova tarefa;</li>
+        <li>Listar todas as tarefas cadastradas;</li>
+        <li>Marcar uma tarefa como concluída;</li>
+        <li>Remover uma tarefa;</li>
+        <li>Consultar as tarefas pendentes;</li>
+        <li>Encerrar o programa por meio de uma opção no menu.</li>
+      </ul>
+
+      <p>
+        Como desafio adicional, permita definir uma prioridade para cada tarefa
+        ou uma data de vencimento.
+      </p>
+
+      <h3>Projeto 2: Sistema de Caixa</h3>
+
+      <p>
+        Desenvolva um sistema que simule o funcionamento do caixa de uma loja. O
+        usuário deverá conseguir adicionar produtos a uma compra e, ao final,
+        visualizar o valor total da operação.
+      </p>
+
+      <p><strong>O programa deverá permitir:</strong></p>
+
+      <ul>
+        <li>Cadastrar produtos com nome, preço e quantidade;</li>
+        <li>Adicionar produtos ao carrinho de compras;</li>
+        <li>Listar os produtos adicionados;</li>
+        <li>Exibir o subtotal de cada produto;</li>
+        <li>Calcular o valor total da compra;</li>
+        <li>Aplicar um desconto quando informado;</li>
+        <li>Finalizar a compra e apresentar um resumo da operação.</li>
+      </ul>
+
+      <p>
+        Como desafio adicional, implemente diferentes formas de pagamento e
+        permita calcular o troco quando o pagamento for realizado em dinheiro.
+      </p>
+
+      <h3>Projeto 3: Gerenciador de Filmes</h3>
+
+      <p>
+        Crie uma aplicação para organizar um catálogo pessoal de filmes. O
+        sistema deverá armazenar as informações dos filmes e oferecer opções
+        para consultar e pesquisar o catálogo.
+      </p>
+
+      <p><strong>O programa deverá permitir:</strong></p>
+
+      <ul>
+        <li>Cadastrar um filme informando título, gênero, ano e avaliação;</li>
+        <li>Listar todos os filmes cadastrados;</li>
+        <li>Pesquisar um filme pelo título;</li>
+        <li>Pesquisar filmes por gênero;</li>
+        <li>Exibir a avaliação de um filme;</li>
+        <li>Calcular a média das avaliações do catálogo;</li>
+        <li>Remover um filme cadastrado.</li>
+      </ul>
+
+      <p>
+        Como desafio adicional, permita ordenar os filmes por título, ano ou
+        avaliação.
+      </p>
+
+      <h3>Projeto 4: Sistema Escolar</h3>
+
+      <p>
+        Desenvolva um sistema para gerenciar alunos e suas notas. O programa
+        deverá permitir cadastrar estudantes, registrar suas avaliações e
+        consultar a situação de cada aluno.
+      </p>
+
+      <p><strong>O programa deverá permitir:</strong></p>
+
+      <ul>
+        <li>Cadastrar um aluno com nome e matrícula;</li>
+        <li>Registrar as notas do aluno;</li>
+        <li>Calcular a média individual;</li>
+        <li>Informar se o aluno está aprovado, em recuperação ou reprovado;</li>
+        <li>Listar todos os alunos cadastrados;</li>
+        <li>Pesquisar um aluno pelo nome ou matrícula;</li>
+        <li>Calcular a média geral da turma.</li>
+      </ul>
+
+      <p>
+        Como desafio adicional, permita cadastrar diferentes disciplinas e
+        consultar o desempenho do aluno em cada uma delas.
+      </p>
+
+      <h3>Projeto 5: Sistema de Biblioteca</h3>
+
+      <p>
+        Crie uma aplicação para administrar o acervo de uma biblioteca. O
+        sistema deverá controlar os livros cadastrados e permitir verificar
+        quais livros estão disponíveis ou emprestados.
+      </p>
+
+      <p><strong>O programa deverá permitir:</strong></p>
+
+      <ul>
+        <li>Cadastrar livros com título, autor e ano de publicação;</li>
+        <li>Listar todos os livros do acervo;</li>
+        <li>Pesquisar livros pelo título;</li>
+        <li>Pesquisar livros pelo autor;</li>
+        <li>Realizar o empréstimo de um livro;</li>
+        <li>Registrar a devolução de um livro;</li>
+        <li>Informar se um livro está disponível para empréstimo.</li>
+      </ul>
+
+      <p>
+        O sistema não deverá permitir o empréstimo de um livro que já esteja
+        emprestado.
+      </p>
+
+      <p>
+        Como desafio adicional, registre o nome do usuário que realizou cada
+        empréstimo e a data prevista para devolução.
+      </p>
+
+      <h3>Projeto 6: Sistema de Reserva de Quadra</h3>
+
+      <p>
+        Desenvolva um sistema para administrar reservas de horários em uma
+        quadra esportiva. O objetivo é permitir que clientes realizem reservas
+        sem que dois usuários ocupem o mesmo horário.
+      </p>
+
+      <p><strong>O programa deverá permitir:</strong></p>
+
+      <ul>
+        <li>Cadastrar clientes;</li>
+        <li>Consultar os clientes cadastrados;</li>
+        <li>Realizar uma reserva informando cliente, data e horário;</li>
+        <li>Listar todas as reservas realizadas;</li>
+        <li>Consultar as reservas de um determinado cliente;</li>
+        <li>Cancelar uma reserva;</li>
+        <li>Verificar se um horário está disponível;</li>
+        <li>Impedir reservas para horários que já estejam ocupados.</li>
+      </ul>
+
+      <p>
+        Como desafio adicional, permita trabalhar com diferentes quadras,
+        horários disponíveis e valores de reserva.
+      </p>
+
+      <h3>Projeto 7: Jogo da Velha</h3>
+
+      <p>
+        Implemente o clássico jogo da velha para dois jogadores no terminal. O
+        programa deverá apresentar um tabuleiro e permitir que cada jogador
+        escolha uma posição para realizar sua jogada.
+      </p>
+
+      <p><strong>O programa deverá:</strong></p>
+
+      <ul>
+        <li>Exibir o tabuleiro antes e depois de cada jogada;</li>
+        <li>Permitir que dois jogadores façam suas jogadas;</li>
+        <li>Identificar de quem é a vez;</li>
+        <li>Impedir que uma posição já ocupada seja escolhida;</li>
+        <li>Verificar se um jogador conseguiu três símbolos em sequência;</li>
+        <li>Identificar situações de empate;</li>
+        <li>Informar o vencedor ou o empate ao final da partida;</li>
+        <li>Permitir iniciar uma nova partida.</li>
+      </ul>
+
+      <p>
+        Como desafio adicional, implemente um modo para jogar contra o
+        computador. Em uma versão mais avançada, tente fazer o computador
+        escolher suas jogadas de forma estratégica.
+      </p>
+
+      <div class="callout">
+        <strong>E agora?</strong>
+
+        <p>
+          Por que não adicionar novas
+          funcionalidades, melhorar a organização do código e pensar em situações
+          que ainda não foram tratadas pelo programa?
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>O FIM</h2>
+
+      <p>
+        Aprender Java envolve muito mais do que memorizar comandos. O principal
+        objetivo dos exercícios é desenvolver a capacidade de
+        <strong
+          >analisar problemas, dividir soluções em etapas e transformar essas
+          etapas em código</strong
+        >.
+      </p>
+
+      <p>
+        Depois de terminar este guia, procure melhorar sua implementação no dia a dia:
+      </p>
+
+      <ul>
+        <li>Os nomes das variáveis estão claros?</li>
+
+        <li>Os métodos possuem responsabilidades bem definidas?</li>
+
+        <li>Existe código repetido que poderia ser reorganizado?</li>
+
+        <li>O programa trata entradas inválidas?</li>
+
+        <li>A solução poderia ser dividida em classes menores?</li>
+      </ul>
+
+      <p>
+        No fim do dia somos apenas mais um relogio quebrado que foge das horas certas. Ou quem sabe apenas mais um ser no esquema das cores.
+      </p>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function toggleHint(btn) {
+        const panel = btn.nextElementSibling;
+        const isOpen = panel.classList.toggle("open");
+
+        btn.textContent = isOpen ? "▲ Ocultar Dica" : "▼ Ver Dica";
+      }
+
+      document.querySelectorAll(".hint-btn").forEach((btn) => {
+        btn.addEventListener("click", () => toggleHint(btn));
+      });
+    </script>
+  </body>
+</html>

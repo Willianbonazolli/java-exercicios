@@ -1,6 +1,6 @@
 # Java Exercícios
 
-Este repositório reúne exercícios práticos de Java organizados por nível de dificuldade.
+Este repositório reúne alguns dos exercícios práticos de Java que eu considero interessantes para você treinar se estiver aprendendo Java, eles estão organizados por nível de dificuldade.
 
 ## Estrutura
 

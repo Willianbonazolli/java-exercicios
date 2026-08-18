@@ -1,0 +1,181 @@
+:root {
+        --color-primary: #2563eb;
+        --color-primary-dark: #1d4ed8;
+        --color-heading: #172554;
+        --color-text: #1f2937;
+        --color-border: #d1d5db;
+        --color-border-light: #dbe3ee;
+        --color-bg-page: #ffffff;
+        --color-bg-code: #f3f4f6;
+        --color-bg-pre: #f8fafc;
+        --color-bg-section: #eef4ff;
+        --color-bg-exercise: #f8fbff;
+        --color-bg-hint: #f0f9ff;
+        --color-bg-callout: #fff7d6;
+        --color-accent-hint: #0ea5e9;
+        --color-accent-callout: #d97706;
+        --color-table-header: #edf3ff;
+
+        --font-body: Arial, sans-serif;
+        --font-mono: "Consolas", "Courier New", monospace;
+
+        --radius-sm: 4px;
+        --radius-md: 6px;
+        --radius-card: 0 8px 8px 0;
+      }
+
+      @page {
+        size: A4;
+        margin: 1.2cm;
+      }
+
+      body {
+        font-family: var(--font-body);
+        margin: 0;
+        padding: 30px;
+        color: var(--color-text);
+        line-height: 1.7;
+        background: var(--color-bg-page);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: var(--color-heading);
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: 32px;
+        text-align: center;
+        border-bottom: 3px solid var(--color-primary);
+        padding-bottom: 12px;
+        margin-bottom: 18px;
+      }
+
+      h2 {
+        font-size: 24px;
+        margin-top: 28px;
+        margin-bottom: 12px;
+        border-left: 6px solid var(--color-primary);
+        background: var(--color-bg-section);
+        padding: 8px 12px;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin-top: 18px;
+        margin-bottom: 8px;
+      }
+
+      p,
+      li {
+        font-size: 15px;
+      }
+
+      ul,
+      ol {
+        margin: 10px 0 16px 24px;
+        padding-left: 20px;
+      }
+
+      :not(pre) > code {
+        font-family: var(--font-mono);
+        background: var(--color-bg-code);
+        border-radius: var(--radius-sm);
+        padding: 2px 6px;
+        color: var(--color-text);
+      }
+
+      pre[class*="language-"] {
+        border-radius: var(--radius-md);
+        margin: 12px 0;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      pre:not([class*="language-"]) {
+        background: var(--color-bg-pre);
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--radius-md);
+        padding: 12px 14px;
+        overflow: auto;
+        margin: 12px 0;
+        font-size: 14px;
+        line-height: 1.5;
+        font-family: var(--font-mono);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 14px 0;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--color-border);
+        padding: 8px 10px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--color-table-header);
+      }
+
+      .section {
+        page-break-inside: avoid;
+        margin-bottom: 26px;
+      }
+
+      .exercise {
+        border-left: 4px solid var(--color-primary);
+        background: var(--color-bg-exercise);
+        padding: 12px 14px;
+        margin: 14px 0;
+        border-radius: var(--radius-card);
+      }
+
+      .exercise strong {
+        color: var(--color-primary-dark);
+      }
+
+      .callout {
+        background: var(--color-bg-callout);
+        border-left: 4px solid var(--color-accent-callout);
+        padding: 12px 14px;
+        margin: 16px 0;
+      }
+
+      .hint-btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 5px 12px;
+        font-size: 13px;
+        background: var(--color-primary);
+        color: #fff;
+        border: none;
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        transition: background 0.15s ease;
+      }
+
+      .hint-btn:hover {
+        background: var(--color-primary-dark);
+      }
+
+      .hint-content {
+        display: none;
+        margin-top: 10px;
+        background: var(--color-bg-hint);
+        border-left: 4px solid var(--color-accent-hint);
+        padding: 10px 14px;
+        border-radius: var(--radius-card);
+        font-size: 14px;
+      }
+
+      .hint-content.open {
+        display: block;
+      }
