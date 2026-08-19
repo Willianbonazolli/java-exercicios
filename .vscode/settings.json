@@ -6,11 +6,13 @@
     "04-orientacao-objetos/SistemaProdutos",
     "04-orientacao-objetos/SistemaAlunos",
     "04-orientacao-objetos/ContaBancaria",
+    "04-orientacao-objetos/Carro",
+    "04-orientacao-objetos/CadastroClientes",
     "04-orientacao-objetos/Agenda",
     "03-arrays",
     "02-condicionais-loops",
     "01-fundamentos",
-    "04-orientacao-objetos/CadastroClientes"
+    "05-projetos/SistemaDeCaixa"
   ],
   "java.configuration.updateBuildConfiguration": "automatic"
 }
